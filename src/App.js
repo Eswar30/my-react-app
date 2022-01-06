@@ -4,13 +4,15 @@ import HelloWorld from './components/HelloWorld';
 import Header from './components/Header';
 import Posts from './components/Posts';
 import ListOfTopic from './components/ListOfTopic';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className='container'>
-      {/* <Header appname="The Eswar app"/> */}
-      <ListOfTopic />
-      {/* <Posts /> */}
+      <Navbar />
+      <Header appname="The Eswar app"/>
+      {/* <ListOfTopic /> */}
+      <Posts />
 
     </div>
   );
