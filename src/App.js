@@ -5,14 +5,16 @@ import Header from './components/Header';
 import Posts from './components/Posts';
 import ListOfTopic from './components/ListOfTopic';
 import Navbar from './components/Navbar';
+import AuthorDetails from './components/AuthorDetails';
 
 function App() {
   return (
     <div className='container'>
       <Navbar />
-      <Header appname="The Eswar app"/>
+      <Header appname="The Eswar app" />
       {/* <ListOfTopic /> */}
       <Posts />
+      {/* <AuthorDetails /> */}
 
     </div>
   );
