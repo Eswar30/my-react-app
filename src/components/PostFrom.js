@@ -6,12 +6,22 @@ export default class PostForm extends Component {
         super();
         // this.handleChange = this.handleChange.bind(this);  if using a arrow function(=>) then do not use this event bind handler
         this.state = {
+            id: "",
             title: "", 
             body: "", 
             author: "", 
             category: "",
         };
     }
+
+    //after update in the component 
+    componentDidUpdate(prevProps){
+        // console.log(this.props.post);
+        if(this.props.post != null && this.props.post != undefined && this.props.post != prevProps.post ) {
+            this.setState(this.props.post);
+        }
+    }
+
 
         // Events Field change Handlers
     handleChange=(event)=> {
@@ -34,16 +44,19 @@ export default class PostForm extends Component {
 
     // Handle form submit 
     handleFormSubmit= (event) => {
+
+        
         //prevent default event submit
         event.preventDefault();
         //submit state with new post
         this.props.onNewPost(this.state);
         //clearing fields
         this.setState({
-            title: '',
-            body: '',
-            author: '', 
-             category: ''
+            id: "",
+            title: "",
+            body: "",
+            author: "", 
+             category: "",
         });
     }
 
@@ -55,26 +68,26 @@ export default class PostForm extends Component {
                 <div className='car bg-light'>
                     <div className='card-body'>
                         <form onSubmit={this.handleFormSubmit}>
-                            <div class="form-group">
-                                <label for="title">Post Title</label>
+                            <div className="form-group">
+                                <label htmlFor="title">Post Title</label>
                                 <input type="text" className="form-control" id="title" name = "title"  value ={this.state.title}
                                 placeholder="Enter Title"
                                     onChange={this.handleChange} />
                             </div>
-                            <div class="form-group">
-                                <label for="body">Body</label>
+                            <div className="form-group">
+                                <label htmlFor="body">Body</label>
                                 <input type="text" className="form-control" id="body" name = "body"  value ={this.state.body}
                                 placeholder=" Enter Body"
                                     onChange={this.handleChange} />
                             </div>
-                            <div class="form-group">
-                                <label for="author">Author</label>
+                            <div className="form-group">
+                                <label htmlFor="author">Author</label>
                                 <input type="text" className="form-control" id="author" name = "author"  value ={this.state.author}
                                 placeholder="Enter author"
                                     onChange={this.handleChange} />
                             </div>
-                            <div class="form-group">
-                                <label for="author">Select category</label>
+                            <div className="form-group">
+                                <label htmlFor="author">Select category</label>
                                 <select className='form-control' id="category" name="category" value={this.state.category}
                                     onChange={this.handleChange} >
 

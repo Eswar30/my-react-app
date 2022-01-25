@@ -19,7 +19,7 @@ export class Register extends Component {
         // console.log(event.target.value);
         const fieldName = event.target.name;
         let fieldValue = event.target.value;
-        if (fieldName == "rememberme") {
+        if (fieldName === "rememberme") {
             fieldValue = event.target.checked;
         }
         // console.log(fieldName,fieldValue);
@@ -89,7 +89,7 @@ export class Register extends Component {
                                 <button type="register" className="btn btn-primary">Register</button>
                             </form>
                         </div>
-                        <div className='col-sm-2'></div>
+                        
                     </div>
 
                 </div>

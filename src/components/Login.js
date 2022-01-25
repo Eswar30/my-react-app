@@ -54,20 +54,20 @@ export class Login extends Component {
                     <div className='col-sm-8'>
                         <form onSubmit={this.handleFormSubmit}>
                             <div className="form-group">
-                                <label htmlfor="email">Email address</label>
+                                <label htmlFor="email">Email address</label>
                                 <input type="email" className="form-control" id="email"  name = "email"  value ={this.state.email} 
                                 onChange={this.handleChange} />
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div className="form-group">
-                                <label htmlfor="password">Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input type="password" className="form-control" id="password" name = "password"  value ={this.state.password} 
                                 onChange={this.handleChange} />
                             </div>
                             <div className="form-group form-check">
                                 <input type="checkbox" className="form-check-input" id="rememberme"  name = "rememberme"  value ={this.state.rememberme} 
                                 onChange={this.handleChange} />
-                                <label className="form-check-label" htmlfor="rememberme">Remember me</label>
+                                <label className="form-check-label" htmlFor="rememberme">Remember me</label>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
