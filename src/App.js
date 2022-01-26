@@ -11,8 +11,15 @@ import { Home } from './components/Home';
 import { Users } from './components/Users';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
+import { useDispatch, useSelector } from 'react-redux';
+import { decreament, increament, loggedIn, getPosts } from './actions/index';
+// import { getPosts } from './services/PostsAPI';
 
 function App() {
+  const counter = useSelector(state=> state.counter );
+  const isLogged = useSelector(state=> state.isLogged );
+  const posts = useSelector(state=> state.posts );
+  const dispatch = useDispatch();
   return (
     <div className='container'>
       <Navbar isLoggedIn = 'false' />
@@ -23,6 +30,14 @@ function App() {
 
 
       {/* define routes */}
+    
+      <div className='APP'>
+        <h1>The Counter :  {counter}</h1>
+        <button className='btn btn-info mr-3' onClick={ ()=> { dispatch(increament(5)) }}> +5 Inc </button>
+        <button className='btn btn-info mr-3' onClick={ ()=> { dispatch(decreament(5)) }}> -5 Dec </button>
+        <button className='btn btn-info mr-3' onClick={ ()=> { dispatch(loggedIn()) }}> - Login User </button>
+        <button className='btn btn-info mr-3' onClick={ ()=> { dispatch(getPosts()) }}> Get All Posts </button>
+      </div>
 
       <Routes>
 

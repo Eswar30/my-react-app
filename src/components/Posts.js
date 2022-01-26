@@ -20,6 +20,7 @@ class Post extends React.Component {
 
      // component lifecycle methods
      componentDidMount() {
+
         // load all my-app data. 
         getPosts().then ( postsObjs =>{
             // console.log("myapp post data", postsObjs);
@@ -27,7 +28,7 @@ class Post extends React.Component {
         }).catch(error=>{
             console.log("Failed to load my-app posts data");
         });
-
+        
 
         // load all categories
         getCategories().then ( response =>{
